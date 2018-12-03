@@ -7,11 +7,11 @@ clean - clean all hosts file
 ```
 
 ## install notes 
-
+```bash
 git clone https://github.com/chunchila/changeHosts.git
 cd changeHosts
 cp changeHosts /usr/local/bin/changeHosts 
 chmod +x /usr/local/bin/changeHosts
-
+```
 have fun :) 
 
