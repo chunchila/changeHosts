@@ -1,0 +1,21 @@
+
+case $1 in 
+fix)
+echo "fixing hosts"
+sudo cp /etc/hosts.empty /etc/hosts
+curl "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" | sudo tee /etc/hosts
+curl "https://raw.githubusercontent.com/l1k/osxparanoia/master/hosts" | sudo tee -a /etc/hosts
+curl "https://someonewhocares.org/hosts/zero/hosts" | sudo tee -a /etc/hosts
+wc -l /etc/hosts
+echo "were added to the hosts file :) " 
+;;
+clean)
+echo "cleaning hosts"
+sudo cp /etc/hosts.empty /etc/hosts
+;;
+*)
+echo Usage : changeHosts [fix] [clean]
+echo fix - download all updated hosts to block 
+echo clean - clean all hosts file
+;;
+esac
