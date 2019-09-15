@@ -8,6 +8,8 @@ curl "https://raw.githubusercontent.com/l1k/osxparanoia/master/hosts" | sudo tee
 curl "https://someonewhocares.org/hosts/zero/hosts" | sudo tee -a /etc/hosts
 wc -l /etc/hosts
 echo "were added to the hosts file :) " 
+dscacheutil -flushcache
+sudo killall -HUP mDNSResponder
 ;;
 clean)
 echo "cleaning hosts"
