@@ -3,9 +3,9 @@ case $1 in
 fix)
 echo "fixing hosts"
 sudo cp /etc/hosts.empty /etc/hosts
-curl "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" | sudo tee /etc/hosts
-curl "https://raw.githubusercontent.com/l1k/osxparanoia/master/hosts" | sudo tee -a /etc/hosts
-curl "https://someonewhocares.org/hosts/zero/hosts" | sudo tee -a /etc/hosts
+curl "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" | sudo tee /etc/hosts > /dev/null
+curl "https://raw.githubusercontent.com/l1k/osxparanoia/master/hosts" | sudo tee -a /etc/hosts > /dev/null
+curl "https://someonewhocares.org/hosts/zero/hosts" | sudo tee -a /etc/hosts > /dev/null
 wc -l /etc/hosts
 echo "were added to the hosts file :) " 
 dscacheutil -flushcache
